@@ -6,7 +6,7 @@ SECTIONS
 
     .text BLOCK(4K) : ALIGN(4K)
     {
-        *(.multiboot)
+        KEEP(*(.multiboot))  /*  FORCE compiler to preserve header at the top */
         *(.text)
     }
 
@@ -26,3 +26,4 @@ SECTIONS
         *(.bss)
     }
 }
+
